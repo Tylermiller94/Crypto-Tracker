@@ -6,7 +6,5 @@ class User < ApplicationRecord
 
   has_many :posts
 
-  class List < ActiveRecord::Base
-    validates :name, :presence => true
-  end
+  validates :name, :presence => true
 end
