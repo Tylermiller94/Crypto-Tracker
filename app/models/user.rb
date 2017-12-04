@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
+
+  class List < ActiveRecord::Base
+    validates :name, :presence => true
+  end
 end
