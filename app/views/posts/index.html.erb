@@ -1,22 +1,29 @@
-<h1 class="title">Posts</h1>
-<div class="container">
-  <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content">
-    <% @posts.each do |post| %>
-    <div class="col-xs-12">
-      <div class="text-center">
-        <h2><%= post.title %></h2>
-        <h6><%= post.created_at.strftime('%b %d, %Y') %></h6>
-      </div>
-
-      <div>
-        <%= raw(post.body).truncate(358) %>
-      </div>
-
-      <div class="text-center">
-        <%= link_to "READ MORE", post_path(post) %>
-      </div>
-      <br>
-    </div>
-    <% end %>
-  </div>
+<p id="notice"><%= notice %></p>
+<h1 class="center">Crypto Tracker Forum</h1>
+<div class="pad center">
+  <table class="center">
+    <thead>
+      <tr>
+        <th width="200">Title</th>
+        <th width="500">Post</th>
+        <th width="150">User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.title %></td>
+          <td><%= post.body %></td>
+          <td><%= post.user.email %></td>
+          <td><%= link_to 'Show', post %></td>
+          <% if post.user == current_user %>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Post', new_post_path, :class => 'button' %>
 </div>

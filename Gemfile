@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'react_on_rails', '10.0.2'
 gem 'foundation-rails'
 gem 'simple_form', '~> 3.2'
+gem 'devise', '4.3.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
