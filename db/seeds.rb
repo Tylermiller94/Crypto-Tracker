@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Product.destroy_all
+
+products = []
+num = Random.new
+
+
+50.times do
+  products.push(Product.create!(
+    name: Faker::Food.ingredient,
+    price: num.rand(100)
+  ))
+end
+
+puts "Seeded #{Product.count} products."
