@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'pages/home'
   get 'forum', to: 'posts#index'
   get '/', to: 'pages#home'

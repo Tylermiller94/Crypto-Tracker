@@ -37,6 +37,7 @@ gem 'foundation-rails'
 gem 'simple_form', '~> 3.2'
 gem 'devise', '4.3.0'
 gem 'faker'
+gem 'rails_admin', '~> 1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
